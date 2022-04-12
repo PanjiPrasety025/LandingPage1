@@ -1,0 +1,509 @@
+/* Membuat Margin Padding pada keseluruhan dengan nilai 0 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Membuat Scroll untuk Firefox Mozzila Khusus dengan Overflow-y untuk membuat bagian scrool dan pada bagian scrollbar-color memberikan warna sedangkan pada scroll-behavior untuk membrikan kecepatan atau ke lambatan */
+
+html {
+    overflow-y: scroll;
+    scrollbar-color: #4756df #e63946;
+    scroll-behavior: smooth;
+}
+
+
+/* ::-moz-scrollbar {
+    width: 10px;
+    color: aqua;
+    height: 6px;
+}
+
+::-moz-scrollbar-track {
+    border-radius: 50px;
+    color: blue;
+}
+
+::-moz-scrollbar-thumb {
+    border-radius: 50px;
+} */
+
+
+/* Membuat font pada bagian body  */
+
+body {
+    font-family: sans-serif;
+    /* scroll-behavior: smooth; */
+}
+
+
+/* Bagain ini untuk mengatur bagian Navbar dengan display flex agar ketengah lalu baground  warna dan memberikan justify-content space around agar sama rata dan memberikan warna putih untuk warna font lalu memberikan tunggi height pada navbar dan memberikan align-items agar ketengah.  */
+
+nav {
+    display: flex;
+    background-color: rgb(4, 40, 80);
+    justify-content: space-around;
+    color: white;
+    height: 50px;
+    align-items: center;
+}
+
+
+/* Pada bagian ini mengatur bagian link dengan display flex agar rata dan ketengah dan memberikan list-style untuk menghilangkan tanda link menjadi hilang dan memeberikan ukuran 40% serta memberikan justify content agar mengatur jarak font */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+
+/* Pada bagian ini mengatur link keseluruhan seperti warna font text decoration menghilangkan garis bawah pada link dan memberikanukuran font sangat kecil dengan 0.8em */
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+
+/* Memberikan Hover saat didekati dan diarahkan menjadi merah pada bagian link dan juga pada  icon */
+
+nav ul li a:hover {
+    color: red;
+}
+
+
+/* 
+.logo i:hover {
+    color: red;
+} */
+
+.logo i {
+    width: 20px;
+    height: 20px;
+    animation: animasivector 1.9s infinite;
+    font-size: 70px;
+}
+
+@keyframes animasivector {
+    0% {
+        /* width: 20px; */
+        color: red;
+    }
+    0% {
+        /* width: 20px;
+        height: 10px; */
+    }
+}
+
+
+/* Mengatur bagian logo gambar dengan memberikan float agar pindah left ke kiri dan memberikan ukuran 90piksel */
+
+nav img {
+    float: left;
+    height: 90px;
+}
+
+
+/* Membuat dan mengatur pada bagian container-satu dengan padding 15px jarak pada content dan memberikam lebar auto dan tinggi 450, dan memberikan baground gambar dengan memebrikan url lalu memberikan baground size ialah untuk cover serta membuat baground position gambar danmar */
+
+.container-satu {
+    /* width: auto;
+    height: auto; */
+    padding: 15px;
+    width: auto;
+    height: 450px;
+    background-image: url(img/1.jpg);
+    background-size: cover;
+    background-position: 0 -100px;
+    margin-top: -5px;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-satu h1 {
+    font-size: 40px;
+    color: white;
+}
+
+.container-satu h2 {
+    font-size: 30px;
+    color: white;
+    margin-top: -15px;
+}
+
+.logo {
+    margin-top: 80px;
+    color: white;
+    font-size: 10px;
+}
+
+.container-satu i {
+    width: 70px;
+    font-weight: 70px;
+    color: white;
+}
+
+.container-dua {
+    width: 1100px;
+    height: 500px;
+    background-color: white;
+    margin-top: 65px;
+    padding-left: 50px;
+    text-align: left;
+    justify-items: left;
+    /* border: 2px solid red; */
+}
+
+.container-dua h1 {
+    font-size: 29px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-align: left;
+    /* justify-self: left;
+    align-self: flex-start; */
+    /* border: 2px solid blue;
+    width: 1100px;
+    height: 200px; */
+}
+
+.container-dua p {
+    font-size: 15px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin-top: -10px;
+    padding-bottom: 25px;
+}
+
+.tmb {
+    padding-bottom: 100px;
+    padding: 4px 4px;
+    border-radius: 5px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(14, 14, 231);
+    text-decoration: none;
+}
+
+.tmb:hover {
+    color: white;
+    background-color: red;
+}
+
+.container-dua img.gambar {
+    width: 450px;
+    height: 300px;
+    float: right;
+}
+
+.container-dua img.gambar1 {
+    width: 150px;
+    height: 100px;
+    float: right;
+    position: relative;
+    left: 480px;
+    top: -30px;
+}
+
+.container-dua img.gambar2 {
+    width: 100px;
+    height: 100px;
+    float: right;
+    position: relative;
+    left: 250px;
+    bottom: -20px;
+}
+
+.container-dua img.gambar3 {
+    width: 100px;
+    height: 100px;
+    float: right;
+    position: relative;
+    left: 700px;
+    bottom: -150px;
+    transform: rotate(-90deg);
+}
+
+.container-dua img.gambar4 {
+    width: 80px;
+    height: 80px;
+    float: right;
+    position: relative;
+    left: 450px;
+    bottom: -330px;
+}
+
+.container-tiga {
+    width: 1220px;
+    height: 555px;
+    background-color: rgb(6, 6, 26);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-column: 1fr 1fr 1fr;
+    grid-template-areas: "isi isi isi" "kontent-1 kontent-2 kontent-3";
+    /* border: 10px solid green; */
+    margin: auto;
+    justify-content: center;
+}
+
+.container-tiga h1 {
+    font-size: 40px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-align: center;
+    justify-self: center;
+    align-self: flex-start;
+    color: red;
+    padding-top: 30px;
+    position: relative;
+    bottom: 50px;
+}
+
+.container-tiga p {
+    position: relative;
+    bottom: 35px;
+}
+
+.dia {
+    color: white;
+    /* padding-bottom: 450px; */
+    text-align: center;
+    max-width: 500px;
+    line-height: 200%;
+    text-align: center;
+    /* padding-left: 344px; */
+    grid-area: isi;
+    margin: auto;
+}
+
+.kontent-1 {
+    grid-area: kontent-1;
+}
+
+.kontent-2 {
+    grid-area: kontent-2;
+}
+
+.kontent-3 {
+    grid-area: kontent-3;
+}
+
+.container-tiga img {
+    width: 200px;
+    height: 135px;
+    justify-content: center;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 8px;
+}
+
+.container-tiga img:hover {
+    transform: scale(1.1);
+}
+
+.container-tiga .aku:hover {
+    transform: scale(1.1);
+}
+
+.aku {
+    box-shadow: 0px 0px 10px black;
+    max-width: 200px;
+}
+
+.kamu {
+    display: inline-flex;
+    margin: -50px auto;
+    color: white;
+    gap: 35px;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+}
+
+.container-keempat {
+    width: 1200px;
+    height: 660px;
+    margin: 40px;
+    background-color: white;
+    display: grid;
+    padding-left: 30px;
+    grid-template-columns: 14% 14%;
+    grid-template-rows: 18% 18%;
+    /* border: 2px solid red; */
+}
+
+.container-keempat img {
+    width: 140px;
+    height: 100px;
+    box-shadow: 0px 0px 5px black;
+    display: block;
+    border: 5px solid black;
+    margin: 10px;
+    transition: 1s;
+}
+
+.container-keempat img:hover {
+    transform: scale(1.1);
+}
+
+.container-keempat img :hover {
+    transform: scale(0.5, 0.5);
+}
+
+.kontent-5 h1 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: red;
+    font-weight: bold;
+    font-size: 45px;
+    position: relative;
+    top: -300px;
+    left: 370px;
+}
+
+.kontent-5 h2 {
+    font-size: 28px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin-top: 10px;
+    padding-bottom: 25px;
+    text-align: left;
+    /* border: 2px solid red; */
+    height: 100px;
+    width: 500px;
+    position: relative;
+    top: -300px;
+    left: 370px;
+}
+
+.kontent-5 p {
+    font-size: 15px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin-top: 10px;
+    padding-bottom: 25px;
+    text-align: left;
+    /* border: 2px solid red; */
+    height: 100px;
+    width: 500px;
+    position: relative;
+    top: -300px;
+    left: 370px;
+}
+
+.container-kelima {
+    width: 1201px;
+    height: 400px;
+    background-color: rgb(6, 6, 26);
+    padding-top: 100px;
+    position: relative;
+    top: -300px;
+    /* display: grid;
+    grid-template-columns: 100px 25% 200px;
+    grid-template-rows: 1fr 1fr 1fr; */
+}
+
+.container-kelima iframe {
+    margin-left: 90px;
+    margin-top: -30px;
+}
+
+.tabel {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border-collapse: collapse;
+    width: 1100px;
+    height: 700px;
+    margin: auto;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.tabel th {
+    color: red;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    justify-self: center;
+    position: relative;
+    left: 185px;
+    top: -240px;
+    padding: 5px 30px 5px;
+}
+
+.tabel td a {
+    text-align: center;
+    color: white;
+    position: relative;
+    top: -250px;
+    right: 100px;
+    padding: 5px 40px 5px;
+    text-decoration: none;
+}
+
+.container-kelima p {
+    color: red;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    justify-self: center;
+    position: relative;
+    left: 370px;
+    top: -215px;
+}
+
+.logo1 {
+    color: white;
+    font-size: 35px;
+    position: relative;
+    bottom: 680px;
+    left: 140px;
+}
+
+.logo2 {
+    color: white;
+    font-size: 35px;
+    position: relative;
+    bottom: 717px;
+    left: 210px;
+}
+
+.logo3 {
+    color: white;
+    font-size: 35px;
+    position: relative;
+    bottom: 758px;
+    left: 282px;
+}
+
+.logo4 {
+    color: white;
+    font-size: 35px;
+    position: relative;
+    bottom: 799px;
+    left: 350px;
+}
+
+.logo1 i:hover {
+    color: red;
+    transform: scale(1.2, 1.2);
+}
+
+.logo2 i:hover {
+    color: red;
+    transform: scale(1.2, 1.2);
+}
+
+.logo3 i:hover {
+    color: red;
+    transform: scale(1.2, 1.2);
+}
+
+.logo4 i:hover {
+    color: red;
+    transform: scale(1.2, 1.2);
+}

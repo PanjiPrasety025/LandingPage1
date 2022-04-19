@@ -1,3 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: #fefefe;
+}
+
+
+/* burger icon */
+
+.burger {
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+    background-color: black;
+}
+
+.change .bar2 {
+    opacity: 0;
+    background-color: black;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    background-color: black;
+}
+
+
+/* wraper */
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    padding: 0;
+    box-shadow: 1px 2px 10px 2px rgba(0, 0, 0, 0.1);
+    background-color: rgb(4, 40, 80);
+}
+
+nav .brand a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-weight: 550;
+}
+
+.bg-sidebar {
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+.bg-sidebar.change {
+    right: 0;
+    visibility: visible;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    right: -300px;
+    width: 300px;
+    transition: 0.5s;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+nav ul.change {
+    right: 0;
+    transition: 0.5s;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 20px 15px;
+}
+
+nav ul li a {
+    color: black;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+@media screen and (min-width: 960px) {
+    .bg-sidebar.change {
+        right: 0;
+        visibility: hidden;
+        display: none;
+    }
+    .burger {
+        display: none;
+    }
+    nav {
+        position: relative;
+    }
+    nav ul {
+        display: flex;
+        position: relative;
+        background-color: unset;
+        top: unset;
+        bottom: unset;
+        right: unset;
+        width: unset;
+        flex-direction: row;
+    }
+    nav ul li {
+        padding: 10px 15px;
+    }
+    nav ul li:hover::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        transition: 0.3s;
+        background-color: red;
+    }
+    nav ul li a {
+        color: white;
+        font-size: 1.1rem;
+    }
+    nav ul li:last-child {
+        font-weight: 550;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container-flex {
+        width: 100%;
+        max-width: 1024px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
 /* Membuat Margin Padding pada keseluruhan dengan nilai 0 */
 
 * {
@@ -41,40 +214,45 @@ body {
 
 /* Bagain ini untuk mengatur bagian Navbar dengan display flex agar ketengah lalu baground  warna dan memberikan justify-content space around agar sama rata dan memberikan warna putih untuk warna font lalu memberikan tunggi height pada navbar dan memberikan align-items agar ketengah.  */
 
-nav {
+
+/* nav {
     display: flex;
     background-color: rgb(4, 40, 80);
     justify-content: space-around;
     color: white;
     height: 50px;
     align-items: center;
-}
+} */
 
 
 /* Pada bagian ini mengatur bagian link dengan display flex agar rata dan ketengah dan memberikan list-style untuk menghilangkan tanda link menjadi hilang dan memeberikan ukuran 40% serta memberikan justify content agar mengatur jarak font */
 
-nav ul {
+
+/* nav ul {
     display: flex;
     list-style: none;
     width: 40%;
     justify-content: space-between;
-}
+} */
 
 
 /* Pada bagian ini mengatur link keseluruhan seperti warna font text decoration menghilangkan garis bawah pada link dan memberikanukuran font sangat kecil dengan 0.8em */
 
-nav ul li a {
+
+/* nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 0.8em;
-}
+} */
 
 
 /* Memberikan Hover saat didekati dan diarahkan menjadi merah pada bagian link dan juga pada  icon */
 
+
+/* 
 nav ul li a:hover {
     color: red;
-}
+} */
 
 
 /* 
@@ -103,13 +281,15 @@ nav ul li a:hover {
 
 /* Mengatur bagian logo gambar dengan memberikan float agar pindah left ke kiri dan memberikan ukuran 90piksel */
 
-nav img {
+
+/* nav img {
     float: left;
     height: 90px;
 }
+ */
 
 
-/* Membuat dan mengatur pada bagian container-satu dengan padding 15px jarak pada content dan memberikam lebar auto dan tinggi 450, dan memberikan baground gambar dengan memebrikan url lalu memberikan baground size ialah untuk cover serta membuat baground position gambar danmar */
+/* Membuat dan mengatur pada bagian container-satu dengan padding 15px jarak pada content dan memberikam lebar auto dan tinggi 450, dan memberikan baground gambar dengan memebrikan url lalu memberikan baground size ialah untuk cover serta membuat baground position gambar otomatis cover, dan pada baground position mengatur bagian gambar naik turun nya danpada margin top ialah mengatur gambar keatas, sedangakan justify content dan text align  untuk mengatur ketengah kalimatnya*/
 
 .container-satu {
     /* width: auto;
@@ -118,17 +298,24 @@ nav img {
     width: auto;
     height: 450px;
     background-image: url(img/1.jpg);
+    box-sizing: border-box;
     background-size: cover;
-    background-position: 0 -100px;
+    background-position: center;
     margin-top: -5px;
     justify-content: center;
     text-align: center;
 }
 
+
+/* Pada bagian container-satu  h1 mengatur ukuran dan warna */
+
 .container-satu h1 {
     font-size: 40px;
     color: white;
 }
+
+
+/* Pada bagian ini membuat dan mengatur bagian h2 pada container-satu dan memberikan warna. serta memebrikan margin top untuk mengatur paragraf pada font. */
 
 .container-satu h2 {
     font-size: 30px;
@@ -136,20 +323,34 @@ nav img {
     margin-top: -15px;
 }
 
+
+/* Logo disini mengatur bagian jarak spasi dan warna serta membuat ukuran pada font. */
+
 .logo {
     margin-top: 80px;
     color: white;
     font-size: 10px;
 }
 
-.container-satu i {
-    width: 70px;
-    font-weight: 70px;
-    color: white;
+.brand img {
+    height: 70px;
 }
 
+
+/* Pada bagian ini kita akan mengatur besar dan ketebalan nya serta warna */
+
+.container-satu i {
+    width: 100px;
+    font-weight: 100px;
+    color: wheat;
+    margin-top: -10px;
+}
+
+
+/* Bagian ini mengatur bagian container 2 dalam ukuran lebar dan tinggi nya serta memberikan baground warna putih dan memberikan margin top untuk mengatur jarak, pada bagian padding left mengatur bagian ke kanan dan text align untuk mengatur ke bagian kiri serta justify contet  untuk ke kiri */
+
 .container-dua {
-    width: 1100px;
+    width: 1000;
     height: 500px;
     background-color: white;
     margin-top: 65px;
@@ -158,6 +359,9 @@ nav img {
     justify-items: left;
     /* border: 2px solid red; */
 }
+
+
+/* pada bagian  ini mengatur container-dua h1 untuk membuat font size mengatur ukuran dan memberikan font serta text agar kekiri  */
 
 .container-dua h1 {
     font-size: 29px;
@@ -170,6 +374,9 @@ nav img {
     height: 200px; */
 }
 
+
+/* Membuat dan mengatur bagian p  yaitu paragraf serta menmberikan font dan margin top untuk memberikan kalimat ke atas.dan memberikan margin top untuk ke atas dan padding bottomke bawah. */
+
 .container-dua p {
     font-size: 15px;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -177,9 +384,53 @@ nav img {
     padding-bottom: 25px;
 }
 
+@media screen and (max-width: 600px) {
+    .container-satu h1,
+    .container-satu h2 {
+        font-size: 25px;
+        text-align: center;
+        justify-content: center;
+    }
+    .container-dua h1,
+    .container-dua p {
+        font-size: 10px;
+        text-align: center;
+    }
+    .container-dua h1 {
+        line-height: 10px;
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+        margin-bottom: -10px;
+    }
+    .container-dua img.gambar {
+        margin-top: -90px;
+    }
+    .container-dua .tmb {
+        padding-bottom: 50px;
+        padding: 5px 5px;
+        border-radius: 5px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 10px;
+        color: white;
+        background-color: rgb(14, 14, 231);
+        text-decoration: none;
+        position: relative;
+        left: 125px;
+    }
+    .container-tiga {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-column: 1fr;
+    }
+}
+
+
+/* Mengatur bagian Tombol dengan memberikan padding bottom dan padding untuk memberikan ukuran pada tombol dan saat mengatur lengkungan kotak beri border-radiussan font huruf dan text decorition menghilangkan list bawah.  */
+
 .tmb {
     padding-bottom: 100px;
-    padding: 4px 4px;
+    padding: 10px 4px;
     border-radius: 5px;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 20px;
@@ -188,10 +439,16 @@ nav img {
     text-decoration: none;
 }
 
+
+/* Memberikan hover cahaya dan font warna putih serta baground color merah*/
+
 .tmb:hover {
     color: white;
     background-color: red;
 }
+
+
+/* Membuat dan mengatur lebar tinggi gambar  */
 
 .container-dua img.gambar {
     width: 450px;
@@ -199,14 +456,20 @@ nav img {
     float: right;
 }
 
+
+/* Mengatur bagian img.gambar1 untuk mengatur ukuran lebar tinggi dan float serta memberikan position agar dapat pindah serta left dan top. */
+
 .container-dua img.gambar1 {
     width: 150px;
     height: 100px;
     float: right;
     position: relative;
-    left: 480px;
+    left: 440px;
     top: -30px;
 }
+
+
+/* Mengatur container-dua img.gambar yang dimana disini mengatur bagian gambar*/
 
 .container-dua img.gambar2 {
     width: 100px;
@@ -216,6 +479,9 @@ nav img {
     left: 250px;
     bottom: -20px;
 }
+
+
+/* Mengatur container-dua img.gambar yang dimana disini mengatur bagian gambar dan bagian transform untuk memutarkan gambar*/
 
 .container-dua img.gambar3 {
     width: 100px;
@@ -227,6 +493,9 @@ nav img {
     transform: rotate(-90deg);
 }
 
+
+/* Mengatur img.gambar4 yang dimana kali ini mengatur bagian gambar dengan posisi dan float */
+
 .container-dua img.gambar4 {
     width: 80px;
     height: 80px;
@@ -236,8 +505,11 @@ nav img {
     bottom: -330px;
 }
 
+
+/* Mengatur bagian container yang dimana kali ini setting  tinggi dan lebarserta warna baground dan display grid agar membuat ke bawah dan membuat gtc gta pada konten agar terpanggil margin auto agar ketengah serta justify konten agar ketengah. */
+
 .container-tiga {
-    width: 1220px;
+    width: 1000;
     height: 555px;
     background-color: rgb(6, 6, 26);
     display: grid;
@@ -249,29 +521,54 @@ nav img {
     justify-content: center;
 }
 
+.tombol {
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 10px;
+    color: white;
+    background-color: red;
+    text-decoration: none;
+    position: relative;
+    bottom: -670px;
+    right: inherit;
+    left: 360px;
+}
+
+
+/* Mengatur bagian h1 pada container-tiga seperti ukuran font dan font bahkan membuat text align dan justify content agar ketengah dan mengatur warna color serta memberikan padding top dan posisi agar dapat merubah */
+
 .container-tiga h1 {
     font-size: 40px;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-align: center;
     justify-self: center;
-    align-self: flex-start;
+    /* align-self: flex-end; */
     color: red;
     padding-top: 30px;
     position: relative;
     bottom: 50px;
 }
 
+
+/* Membuat dan mengatur posisi p seperti bagian position bottom dan color */
+
 .container-tiga p {
     position: relative;
     bottom: 35px;
+    color: white;
 }
+
+
+/* Disini kita mengatur bagian isi konten Product yang dimana berisi warna text align max widt dan line-height ialah mengatur jarak baris agar mudah. */
 
 .dia {
     color: white;
     /* padding-bottom: 450px; */
     text-align: center;
     max-width: 500px;
-    line-height: 200%;
+    line-height: 150%;
     text-align: center;
     /* padding-left: 344px; */
     grid-area: isi;
@@ -291,7 +588,7 @@ nav img {
 }
 
 .container-tiga img {
-    width: 200px;
+    width: 100%;
     height: 135px;
     justify-content: center;
     box-shadow: 0px 0px 5px black;
@@ -323,14 +620,14 @@ nav img {
 }
 
 .container-keempat {
-    width: 1200px;
-    height: 660px;
+    width: 1120px;
+    height: 400px;
     margin: 40px;
     background-color: white;
     display: grid;
     padding-left: 30px;
-    grid-template-columns: 14% 14%;
-    grid-template-rows: 18% 18%;
+    grid-template-columns: 16% 16%;
+    grid-template-rows: 30% 30%;
     /* border: 2px solid red; */
 }
 
@@ -379,9 +676,10 @@ nav img {
 .kontent-5 p {
     font-size: 15px;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    margin-top: 10px;
+    margin-top: 30px;
     padding-bottom: 25px;
     text-align: left;
+    line-height: 15px;
     /* border: 2px solid red; */
     height: 100px;
     width: 500px;
@@ -390,120 +688,323 @@ nav img {
     left: 370px;
 }
 
-.container-kelima {
-    width: 1201px;
-    height: 400px;
+footer {
+    width: 1000;
+    /* bagrond warna */
     background-color: rgb(6, 6, 26);
-    padding-top: 100px;
-    position: relative;
-    top: -300px;
-    /* display: grid;
-    grid-template-columns: 100px 25% 200px;
-    grid-template-rows: 1fr 1fr 1fr; */
-}
-
-.container-kelima iframe {
-    margin-left: 90px;
-    margin-top: -30px;
-}
-
-.tabel {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    border-collapse: collapse;
-    width: 1100px;
-    height: 700px;
-    margin: auto;
-    justify-content: center;
+    /* display grid agar di panggil */
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* map di kiri footerlist tengah, footerlist kanan dengan ukuran 300px dan sosmed 100px .. dan 3 baris */
+    grid-template: "map footerlink footerlink" 300px "sosmed kosong arah" 100px / 1fr 1fr 1fr;
+    /* jarak */
+    padding: 20px;
+    /* varianfont */
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
-.tabel th {
+
+/* mengatur bagian map */
+
+iframe {
+    /* grid map */
+    grid-area: map;
+    /* lebar */
+    width: 370px;
+    /* tinggi */
+    height: 250px;
+    /* agar ke akhir */
+    justify-self: end;
+    /* agar ke akhir */
+    align-self: end;
+}
+
+
+/* bagian link  */
+
+.footerlink {
+    /* panggil grid */
+    grid-area: footerlink;
+    /* agar ketengah */
+    display: flex;
+    /* jarak */
+    justify-content: space-evenly;
+    /* agar ke tengah */
+    align-items: center;
+}
+
+.footerlink ul {
+    /* menghilangkan list */
+    list-style: none;
+    /* warna */
     color: red;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-size: 20px;
-    justify-content: center;
-    text-align: center;
-    justify-items: center;
-    justify-self: center;
-    position: relative;
-    left: 185px;
-    top: -240px;
-    padding: 5px 30px 5px;
 }
 
-.tabel td a {
-    text-align: center;
-    color: white;
-    position: relative;
-    top: -250px;
-    right: 100px;
-    padding: 5px 40px 5px;
+
+/* mengatur judul */
+
+.footerlink ul li p {
+    /* ukuran font */
+    font-size: 1.3em;
+    /* ketebalan */
+    font-weight: bold;
+    /* spasi */
+    line-height: 50px;
+}
+
+.footerlink ul li a {
+    /* menghilangkan garis bawah */
     text-decoration: none;
+    /* warna */
+    color: #f1faee;
+    line-height: 50px;
 }
 
-.container-kelima p {
+
+/* bagian sosmed */
+
+.sosmed {
+    /* ukuran besar */
+    width: 370px;
+    /* grid panggil */
+    grid-area: sosmed;
+    /* agar auto ketengah */
+    display: flex;
+    /* menggunakan jarak */
+    justify-content: space-evenly;
+    /* agar mepet di kanan */
+    justify-self: end;
+}
+
+.arah .arahpanah {
+    width: 370px;
+    grid-area: arah;
+    display: none;
+    /* justify-content: end;
+  justify-self: end; */
     color: red;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-size: 20px;
-    justify-content: center;
-    text-align: center;
-    justify-items: center;
+    position: fixed;
+    right: -240px;
+    bottom: 100px;
+}
+
+.arah .arahpanah.scroll-active {
+    display: block;
+}
+
+
+/* setting icon*/
+
+.sosmed i {
+    /* set warna */
+    color: #f1faee;
+    /* agar tengah */
     justify-self: center;
+    /* tengah horizontal */
+    align-self: center;
+}
+
+
+/* hover */
+
+.sosmed i:hover {
+    /* awalnya 1.2 */
+    transform: scale(1.2);
+    /* lalu berubah 0.7 */
+    transition: 0.7s;
+    /* warna merah */
+    color: #e63946;
+}
+
+
+/*Hamburger Menu*/
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    /*Bacground-color: black; */
     position: relative;
-    left: 370px;
-    top: -215px;
+    z-index: 2;
 }
 
-.logo1 {
-    color: white;
-    font-size: 35px;
-    position: relative;
-    bottom: 680px;
-    left: 140px;
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: black;
+    border-radius: 3px;
+    transition: all 0.5s;
 }
 
-.logo2 {
-    color: white;
-    font-size: 35px;
-    position: relative;
-    bottom: 717px;
-    left: 210px;
+.menu-toggle input {
+    display: block;
+    position: absolute;
+    background-color: black;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
 }
 
-.logo3 {
-    color: white;
-    font-size: 35px;
-    position: relative;
-    bottom: 758px;
-    left: 282px;
+
+/*Hamburger Menu Animation*/
+
+
+/* .menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
 }
 
-.logo4 {
-    color: white;
-    font-size: 35px;
-    position: relative;
-    bottom: 799px;
-    left: 350px;
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
 }
 
-.logo1 i:hover {
-    color: red;
-    transform: scale(1.2, 1.2);
+.menu-toggle input:checked~span:nth-child(2) {
+    background-color: white;
+    transform: rotate(50Sdeg) translate(-10px, -10px);
 }
 
-.logo2 i:hover {
-    color: red;
-    transform: scale(1.2, 1.2);
+.menu-toggle input:checked~span:nth-child(4) {
+    background-color: white;
+    transform: rotate(500deg) translate(-1px, 0);
 }
 
-.logo3 i:hover {
-    color: red;
-    transform: scale(1.2, 1.2);
+.menu-toggle input:checked~span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+} */
+
+
+/* breakpoint */
+
+@media (max-width: 1200px) {
+    .container-dua .container-dua h1 .container-dua p {
+        font-size: 40px;
+    }
+    .container-dua .container-dua h1 .art:nth-child(1) {
+        width: 100px;
+        bottom: 250px;
+        right: 80px;
+        transform: rotate(-80deg);
+        -webkit-transform: rotate(-80deg);
+        -moz-transform: rotate(-80deg);
+        -ms-transform: rotate(-80deg);
+        -o-transform: rotate(-80deg);
+    }
+    .container-dua .container-dua h1 .art:nth-child(2) {
+        width: 200px;
+        top: 50px;
+        right: 50px;
+    }
+    .container-dua .container-dua h1 .art:nth-child(3) {
+        width: 100px;
+        bottom: 60px;
+        right: 500px;
+    }
+    .container-dua .container-dua h1 .art:nth-child(4) {
+        width: 100px;
+        top: 150px;
+        right: 470px;
+    }
 }
 
-.logo4 i:hover {
-    color: red;
-    transform: scale(1.2, 1.2);
+@media (max-width: 1100px) {
+    .container-dua .container-dua h1 .container-dua p {
+        font-size: 35px;
+    }
+    .container-dua .container-dua h1 .art:nth-child(1) {
+        width: 80px;
+        bottom: 250px;
+        right: 80px;
+        transform: rotate(-80deg);
+        -webkit-transform: rotate(-80deg);
+        -moz-transform: rotate(-80deg);
+        -ms-transform: rotate(-80deg);
+        -o-transform: rotate(-80deg);
+    }
+    .container-dua .container-dua h1 .art:nth-child(2) {
+        width: 180px;
+        top: 70px;
+        right: 70px;
+    }
+    .container-dua .container-dua h1 .art:nth-child(3) {
+        width: 80px;
+        bottom: 80px;
+        right: 450px;
+    }
+    .container-dua .container-dua h1 .art:nth-child(4) {
+        width: 80px;
+        top: 160px;
+        right: 420px;
+    }
+    .container-tiga .dia .kamu {
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    .container-keempat .container-keempat img .container-keempat .kontent-5 {
+        width: 180px;
+        height: 120px;
+    }
+    .container-keempat .container-keempat h1 p .container-keempat .kontent-5 {
+        font-size: 40px;
+    }
+    .footer .iframe .footerlink .sosmed .arah {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav .container-satu {
+        z-index: 1000;
+    }
+    .nav .container-satu .nav ul {
+        /* padding-top: 30px; */
+        position: absolute;
+        background-color: #f1faee;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 300px;
+        top: 0;
+        left: -100%;
+        z-index: 10000;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+    }
+    .nav .container-satu .nav ul li {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 50px;
+        margin-right: 0;
+    }
+    .nav .container-satu .nav ul li a {
+        color: #181625;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .nav .container-satu .nav ul li a .logo {
+        display: block;
+        width: 40px;
+        margin-right: 10px;
+        fill: #1d1a2d;
+    }
+    .nav .container-satu .nav ul li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+    }
 }

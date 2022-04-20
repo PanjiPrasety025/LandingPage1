@@ -394,17 +394,35 @@ nav ul li a:hover {
     .container-dua h1,
     .container-dua p {
         font-size: 10px;
+        color: black;
         text-align: center;
+        position: relative;
+        top: 120px;
+        padding-right: 100px;
     }
     .container-dua h1 {
         line-height: 10px;
         text-align: center;
         justify-content: center;
         justify-items: center;
-        margin-bottom: -10px;
+        margin-bottom: -40px;
+        color: black;
+        position: relative;
+        top: 100px;
     }
     .container-dua img.gambar {
         margin-top: -90px;
+    }
+    .container-dua .gambar1,
+    .container-dua .gambar2,
+    .container-dua .gambar3,
+    .container-dua .gambar4 {
+        overflow: hidden;
+        display: none;
+    }
+    .footerlink {
+        display: none;
+        overflow: hidden;
     }
     .container-dua .tmb {
         padding-bottom: 50px;
@@ -413,15 +431,52 @@ nav ul li a:hover {
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
         font-size: 10px;
         color: white;
-        background-color: rgb(14, 14, 231);
+        background-color: blue;
         text-decoration: none;
         position: relative;
-        left: 125px;
+        left: 115px;
+        top: 120px;
     }
-    .container-tiga {
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-column: 1fr;
+    /* .container-dua {
+        overflow: hidden;
+    } */
+    .container-dua .gambar {
+        position: relative;
+        bottom: -60px;
+    }
+    .container-dua .tombol {
+        background-color: red;
+        position: relative;
+        left: 30px;
+        bottom: -660px;
+    }
+    .container-tiga .kamu {
+        color: red;
+        font-size: 10px;
+        grid-template-columns: 1fr minmax(200px, 300px) 1fr;
+    }
+    .container-keempat .kontent-5 h1 {
+        color: red;
+        font-size: 30px;
+        position: relative;
+        text-align: end;
+        left: 40px;
+        top: 1px;
+    }
+    .container-keempat .kontent-5 p {
+        color: black;
+        font-size: 5px;
+        text-align: center;
+        position: relative;
+        left: -80px;
+        top: -30px;
+        padding: 5px;
+        width: bold;
+    }
+    .container-keempat h2 {
+        color: #4756df;
+        overflow: hidden;
+        display: none;
     }
 }
 
@@ -695,9 +750,9 @@ footer {
     /* display grid agar di panggil */
     display: grid;
     /* map di kiri footerlist tengah, footerlist kanan dengan ukuran 300px dan sosmed 100px .. dan 3 baris */
-    grid-template: "map footerlink footerlink" 300px "sosmed kosong arah" 100px / 1fr 1fr 1fr;
+    grid-template: "map footerlink footerlink" 250px "sosmed kosong arah" 100px / 1fr 1fr 1fr;
     /* jarak */
-    padding: 20px;
+    padding: 67px;
     /* varianfont */
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
@@ -815,196 +870,4 @@ iframe {
     transition: 0.7s;
     /* warna merah */
     color: #e63946;
-}
-
-
-/*Hamburger Menu*/
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-    /*Bacground-color: black; */
-    position: relative;
-    z-index: 2;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 28px;
-    height: 3px;
-    background: black;
-    border-radius: 3px;
-    transition: all 0.5s;
-}
-
-.menu-toggle input {
-    display: block;
-    position: absolute;
-    background-color: black;
-    width: 40px;
-    height: 28px;
-    left: -5px;
-    top: -5px;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 2;
-}
-
-
-/*Hamburger Menu Animation*/
-
-
-/* .menu-toggle span:nth-child(2) {
-    transform-origin: 0 0;
-}
-
-.menu-toggle span:nth-child(4) {
-    transform-origin: 0 100%;
-}
-
-.menu-toggle input:checked~span:nth-child(2) {
-    background-color: white;
-    transform: rotate(50Sdeg) translate(-10px, -10px);
-}
-
-.menu-toggle input:checked~span:nth-child(4) {
-    background-color: white;
-    transform: rotate(500deg) translate(-1px, 0);
-}
-
-.menu-toggle input:checked~span:nth-child(3) {
-    opacity: 0;
-    transform: scale(0);
-} */
-
-
-/* breakpoint */
-
-@media (max-width: 1200px) {
-    .container-dua .container-dua h1 .container-dua p {
-        font-size: 40px;
-    }
-    .container-dua .container-dua h1 .art:nth-child(1) {
-        width: 100px;
-        bottom: 250px;
-        right: 80px;
-        transform: rotate(-80deg);
-        -webkit-transform: rotate(-80deg);
-        -moz-transform: rotate(-80deg);
-        -ms-transform: rotate(-80deg);
-        -o-transform: rotate(-80deg);
-    }
-    .container-dua .container-dua h1 .art:nth-child(2) {
-        width: 200px;
-        top: 50px;
-        right: 50px;
-    }
-    .container-dua .container-dua h1 .art:nth-child(3) {
-        width: 100px;
-        bottom: 60px;
-        right: 500px;
-    }
-    .container-dua .container-dua h1 .art:nth-child(4) {
-        width: 100px;
-        top: 150px;
-        right: 470px;
-    }
-}
-
-@media (max-width: 1100px) {
-    .container-dua .container-dua h1 .container-dua p {
-        font-size: 35px;
-    }
-    .container-dua .container-dua h1 .art:nth-child(1) {
-        width: 80px;
-        bottom: 250px;
-        right: 80px;
-        transform: rotate(-80deg);
-        -webkit-transform: rotate(-80deg);
-        -moz-transform: rotate(-80deg);
-        -ms-transform: rotate(-80deg);
-        -o-transform: rotate(-80deg);
-    }
-    .container-dua .container-dua h1 .art:nth-child(2) {
-        width: 180px;
-        top: 70px;
-        right: 70px;
-    }
-    .container-dua .container-dua h1 .art:nth-child(3) {
-        width: 80px;
-        bottom: 80px;
-        right: 450px;
-    }
-    .container-dua .container-dua h1 .art:nth-child(4) {
-        width: 80px;
-        top: 160px;
-        right: 420px;
-    }
-    .container-tiga .dia .kamu {
-        display: grid;
-        grid-template-columns: repeat(2, 300px);
-        grid-template-rows: repeat(1, 1fr);
-    }
-    .container-keempat .container-keempat img .container-keempat .kontent-5 {
-        width: 180px;
-        height: 120px;
-    }
-    .container-keempat .container-keempat h1 p .container-keempat .kontent-5 {
-        font-size: 40px;
-    }
-    .footer .iframe .footerlink .sosmed .arah {
-        width: 100%;
-    }
-}
-
-@media (max-width: 900px) {
-    .nav .container-satu {
-        z-index: 1000;
-    }
-    .nav .container-satu .nav ul {
-        /* padding-top: 30px; */
-        position: absolute;
-        background-color: #f1faee;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 300px;
-        top: 0;
-        left: -100%;
-        z-index: 10000;
-        transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        -ms-transition: all 0.3s;
-        -o-transition: all 0.3s;
-    }
-    .nav .container-satu .nav ul li {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 20px;
-        padding-left: 30px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-        margin-bottom: 50px;
-        margin-right: 0;
-    }
-    .nav .container-satu .nav ul li a {
-        color: #181625;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    .nav .container-satu .nav ul li a .logo {
-        display: block;
-        width: 40px;
-        margin-right: 10px;
-        fill: #1d1a2d;
-    }
-    .nav .container-satu .nav ul li {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10000;
-    }
 }
